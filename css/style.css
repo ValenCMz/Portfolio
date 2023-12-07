@@ -1,0 +1,126 @@
+:root {
+    --font_family: 'Plus Jakarta Sans', sans-serif;
+    --color_fuente: #475569;
+}
+
+body {
+    font-family: var(--font_family);
+    background-color: #FFFFFF;
+}
+
+/* Barra de navegacion */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    opacity: 0;
+}
+
+.nav__container_perfil {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 25px;
+}
+
+.nav__container_perfil p {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color_fuente);
+}
+
+.nav__container_switch {
+    padding-right: 25px;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 25px;
+}
+
+.header__perfil {
+    width: 202px;
+    height: 202px;
+    background: url(../img/perfil/fotoPerfil.png), lightgray 50% / cover no-repeat;
+    border-radius: 202px;
+    border: 4px solid #818CF8;
+}
+
+.header__info h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color_fuente);
+}
+
+.header__info p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color_fuente);
+    text-align: center;
+}
+
+.header__container_i {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__container-iconGreen {
+    width: 33px;
+    height: 35px;
+    border-radius: 10px;
+    background: #A7F3D0;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__container-iconGreen img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header__container-iconResumen {
+    width: 118px;
+    height: 37px;
+    border-radius: 6px;
+    background: #E0E7FF;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header__container-iconResumen-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 3px;
+}
+
+.header__container-iconResumen p {
+    font-size: 14px;
+    color: #7175F3;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 3px;
+}
+
+.header__container-iconResumen img {
+    width: 29px;
+    height: 29px;
+}
