@@ -1,6 +1,8 @@
 :root {
     --font_family: 'Plus Jakarta Sans', sans-serif;
     --color_fuente: #475569;
+    --color_fuente2: #818CF8;
+    --color_texto: #39475A;
 }
 
 body {
@@ -86,6 +88,34 @@ body {
     cursor: pointer;
 }
 
+.tooltip-box {
+    display: none;
+    background-color: #1F2937;
+    z-index: 500;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 110%;
+    left: -99%;
+}
+
+.header__container-iconGreen:hover .tooltip-box {
+    display: inline-block;
+}
+
+.tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top-color: #1F2937;
+}
+
 .header__container-iconGreen img {
     width: 20px;
     height: 20px;
@@ -103,6 +133,11 @@ body {
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+.header__container-iconResumen:hover {
+    background: #E6ECFF;
+
 }
 
 .header__container-iconResumen-item {
@@ -123,4 +158,171 @@ body {
 .header__container-iconResumen img {
     width: 29px;
     height: 29px;
+}
+
+.linea_punteada {
+    width: 350px;
+    height: 1px;
+    border-bottom: 1px dotted #D1D5DB;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* Perfil */
+
+.section__perfil {
+    margin-left: 20px;
+}
+
+.section__perfil-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section__perfil-item h2 {
+    color: var(--color_fuente2);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.section__perfil-info {
+    width: 350px;
+    height: 90px;
+    margin-top: -20px;
+
+}
+
+.section__perfil-info p {
+    color: var(--color_texto);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.section__perfil-img {
+    margin-top: 3px;
+}
+
+/* Proyectos */
+.section__proyectos {
+    margin-top: 32px;
+}
+
+.section__proyectos-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 17px;
+}
+
+.section__proyectos-titulo h2 {
+    color: var(--color_fuente2);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section__proyectos-titulo_img {
+    padding-top: 3px;
+}
+
+.section__proyectos-titulo_img img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Proyectos, proyecto */
+
+.section__proyectos-proy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 356px;
+    margin-bottom: 20px;
+}
+
+.cont_proy {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.section__proyectos-proy_contImg {
+    position: relative;
+    width: 356px;
+    height: 214px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background: #E1E7FF;
+}
+
+
+.section__proyectos-proy_img {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.section__proyectos-proy_img img {
+    width: 420px;
+    border-radius: 30px 0 10px 0px;
+}
+
+.section__proyectos-proy_info h2 {
+    color: #1E293B;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section__proyectos-proy_info p {
+    color: var(--color_texto);
+    font-size: 14px;
+}
+
+.section__proyectos-proy_tecnologias {
+    display: flex;
+    gap: 5px;
+}
+
+.section__proyectos-proy_tecnologias img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.section__proyectos-proy_button {
+    display: flex;
+    width: 353px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #0F172A;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+.btn_publicacion {
+    margin-top: 6px;
+    background: transparent;
+    color: #000000;
+    border: 2px solid black;
 }
