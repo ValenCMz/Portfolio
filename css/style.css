@@ -172,13 +172,18 @@ body {
 /* Perfil */
 
 .section__perfil {
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section__perfil-item {
     display: flex;
     align-items: center;
     gap: 15px;
+    /* Quiero que quede al inicio donde arranca el p */
+    align-self: flex-start;
+    margin-left: calc(50% - 175px);
 }
 
 .section__perfil-item h2 {
@@ -192,7 +197,6 @@ body {
     width: 350px;
     height: 90px;
     margin-top: -20px;
-
 }
 
 .section__perfil-info p {
@@ -210,13 +214,17 @@ body {
 /* Proyectos */
 .section__proyectos {
     margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section__proyectos-titulo {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: 17px;
+    align-self: flex-start;
+    margin-left: calc(50% - 175px);
 }
 
 .section__proyectos-titulo h2 {
@@ -325,4 +333,52 @@ body {
     background: transparent;
     color: #000000;
     border: 2px solid black;
+}
+
+.section__proyectos-proy_small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.section__proyectos-proy_small-item {
+    width: 345px;
+    height: 122px;
+    border-radius: 10px;
+    border: 2px solid #F3F4F6;
+}
+
+.section__proyectos-proy_small-item h3,
+.section__proyectos-proy_small-item p {
+    padding-left: 25px;
+}
+
+.section__proyectos-proy_small-item h3 {
+    color: #1E293B;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.section__proyectos-proy_small-item p {
+    color: var(--color_texto);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -8px;
+}
+
+.section__proyectos-proy_small-tecnologias {
+    display: flex;
+    padding-left: 25px;
+    margin-top: -10px;
+    gap: 3px;
+}
+
+.section__proyectos-proy_small-tecnologias img {
+    width: 20px;
+    height: 20px;
 }
