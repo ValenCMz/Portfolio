@@ -10,6 +10,10 @@ body {
     background-color: #FFFFFF;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Barra de navegacion */
 
 .nav {
@@ -17,7 +21,19 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 65px;
+    position: sticky;
+    top: 0;
     opacity: 0;
+    z-index: 1000;
+    transition: all 0.5s ease;
+
+
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .nav__container_perfil {
@@ -35,6 +51,7 @@ body {
 
 .nav__container_switch {
     padding-right: 25px;
+
 }
 
 /* Header */
@@ -50,6 +67,7 @@ body {
     top: 0;
     right: 0;
     padding: 25px;
+    cursor: pointer;
 }
 
 .header__perfil {
@@ -147,6 +165,10 @@ body {
     padding-top: 3px;
 }
 
+.header__container-iconResumen a {
+    text-decoration: none;
+}
+
 .header__container-iconResumen p {
     font-size: 14px;
     color: #7175F3;
@@ -171,19 +193,18 @@ body {
 
 /* Perfil */
 
-.section__perfil {
+.main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.section__perfil {}
+
 .section__perfil-item {
     display: flex;
     align-items: center;
     gap: 15px;
-    /* Quiero que quede al inicio donde arranca el p */
-    align-self: flex-start;
-    margin-left: calc(50% - 175px);
 }
 
 .section__perfil-item h2 {
@@ -214,17 +235,14 @@ body {
 /* Proyectos */
 .section__proyectos {
     margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
 }
 
 .section__proyectos-titulo {
     display: flex;
     align-items: center;
     gap: 15px;
-    align-self: flex-start;
-    margin-left: calc(50% - 175px);
+
 }
 
 .section__proyectos-titulo h2 {
@@ -247,22 +265,12 @@ body {
 /* Proyectos, proyecto */
 
 .section__proyectos-proy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     width: 100%;
     max-width: 356px;
     margin-bottom: 20px;
 }
 
-.cont_proy {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-
-}
+.cont_proy {}
 
 .section__proyectos-proy_contImg {
     position: relative;
@@ -272,6 +280,7 @@ body {
     position: relative;
     overflow: hidden;
     background: #E1E7FF;
+
 }
 
 
@@ -279,11 +288,17 @@ body {
     position: absolute;
     left: 30px;
     top: 30px;
+    transition: all 0.5s ease;
+
 }
 
 .section__proyectos-proy_img img {
     width: 420px;
     border-radius: 30px 0 10px 0px;
+}
+
+.proy-scale {
+    transform: scale(1.1);
 }
 
 .section__proyectos-proy_info h2 {
@@ -336,9 +351,6 @@ body {
 }
 
 .section__proyectos-proy_small {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 10px;
 }
 
@@ -381,4 +393,216 @@ body {
 .section__proyectos-proy_small-tecnologias img {
     width: 20px;
     height: 20px;
+}
+
+/* Tecnologia */
+
+.section__tecnologias {
+    margin-top: 50px;
+}
+
+.section__tecnologias-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    align-self: start;
+    margin-left: calc(50% - 175px);
+}
+
+
+.section__tecnologias-titulo h2 {
+    color: var(--color_fuente2);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.section__tecnologias-titulo img {
+    width: 30px;
+    height: 30px;
+    padding-top: 4px;
+}
+
+.section__tecnologias-contTeconologias {
+    display: flex;
+    gap: 10px;
+    flex-flow: row wrap;
+    margin-left: calc(50% - 160px);
+}
+
+.section__tecnologias-contIcons h3 {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: calc(50% - 160px);
+
+}
+
+.section__tecnologias-item {
+    width: 105px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px solid #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.section__tecnologias-item_img {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section__tecnologias-item_img img {
+    width: 44px;
+    height: 44px;
+}
+
+.section__tecnologias-item_info {
+    margin-top: 55px;
+}
+
+.section__tecnologias-item_info p {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* Contacto */
+
+.section__contacto {
+    margin-top: 50px;
+
+}
+
+.section__contacto-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    align-self: start;
+    margin-left: calc(50% - 175px);
+}
+
+.section__contacto-titulo h2 {
+    color: var(--color_fuente2);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section__contacto-titulo img {
+    padding-top: 6px;
+}
+
+.section__contacto-contItems {
+    display: flex;
+    gap: 10px;
+    margin-left: calc(50% - 175px);
+}
+
+.section__contacto-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 133px;
+    height: 63px;
+    border-radius: 10px;
+    border: 1px solid #F0F0F0;
+}
+
+.section__contacto-item img {
+    width: 30px;
+    height: 30px;
+}
+
+.linkedin {
+    color: #0288D1;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.github {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* Email */
+
+.section__email-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    align-self: start;
+    margin-left: calc(50% - 175px);
+}
+
+.section__email-titulo h2 {
+    color: var(--color_fuente2);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section__email-titulo img {
+    padding-top: 6px;
+}
+
+.section__email-cont {
+    display: flex;
+}
+
+.section__email-cont_email {
+    width: 300px;
+    height: 25px;
+    border-radius: 4px;
+    background: #F2F2F2;
+    position: relative;
+}
+
+.email {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section__email-send {
+    width: 35px;
+    height: 23.75px;
+    border-radius: 4px;
+    background: #E0E7FF;
+    position: relative;
+}
+
+.section__email-send img {
+    width: 22.5px;
+    height: 21.25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section__email-cont_icon {
+    display: flex;
+    gap: 6px;
+    margin-left: 10px;
 }
