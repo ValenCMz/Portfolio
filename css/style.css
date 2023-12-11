@@ -283,7 +283,6 @@ a {
 
 }
 
-
 .section__proyectos-proy_img {
     position: absolute;
     left: 30px;
@@ -295,10 +294,6 @@ a {
 .section__proyectos-proy_img img {
     width: 420px;
     border-radius: 30px 0 10px 0px;
-}
-
-.proy-scale {
-    transform: scale(1.1);
 }
 
 .section__proyectos-proy_info h2 {
@@ -350,8 +345,14 @@ a {
     border: 2px solid black;
 }
 
+.btn_publicacion img {
+    display: none;
+}
+
 .section__proyectos-proy_small {
     margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 .section__proyectos-proy_small-item {
@@ -359,6 +360,22 @@ a {
     height: 122px;
     border-radius: 10px;
     border: 2px solid #F3F4F6;
+    position: relative;
+}
+
+.arrow_up {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.arrow_up img {
+    width: 30px;
+    height: 30px;
 }
 
 .section__proyectos-proy_small-item h3,
@@ -592,7 +609,16 @@ a {
     position: relative;
 }
 
-.section__email-send img {
+.section__email-enviar {
+    width: 35px;
+    height: 23.75px;
+    border-radius: 4px;
+    background: #E0E7FF;
+    position: relative;
+}
+
+.section__email-send img,
+.section__email-enviar img {
     width: 22.5px;
     height: 21.25px;
     position: absolute;
@@ -605,4 +631,204 @@ a {
     display: flex;
     gap: 6px;
     margin-left: 10px;
+}
+
+.tooltip-box_send {
+    display: none;
+    background-color: #1F2937;
+    z-index: 500;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 140%;
+    left: -55%;
+}
+
+.tooltip-box_copiar {
+    display: none;
+    background-color: #1F2937;
+    z-index: 500;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 140%;
+    left: -65%;
+}
+
+.section__email-send:hover .tooltip-box_send,
+.section__email-enviar:hover .tooltip-box_copiar {
+    display: inline-block;
+}
+
+
+.tooltip-box_send::after,
+.tooltip-box_copiar::after {
+    content: "";
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top-color: #1F2937;
+}
+
+/* Mediaqueries */
+@media (min-width: 1024px) {
+
+    /* Header */
+    .header {
+        display: grid;
+        grid-template-areas:
+            "perfil info"
+            "perfil cont";
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .header__info p {
+        text-align: start;
+    }
+
+    .header__perfil {
+        grid-area: perfil;
+    }
+
+    .header__info {
+        grid-area: info;
+    }
+
+    .header__container_i {
+        margin-top: -100px;
+        grid-area: cont;
+    }
+
+    .linea_punteada {
+        width: 720px;
+        margin: 60px auto auto auto;
+    }
+
+    /* Perfil */
+
+    .section__perfil {
+        margin-top: 30px;
+    }
+
+    .section__perfil-info {
+        width: 800px;
+        height: 90px;
+    }
+
+    /* Proyecto */
+
+    .section__proyectos-proy {
+        display: grid;
+        grid-template-areas:
+            "img info"
+            "img info"
+            "img info";
+        gap: 27px;
+        max-width: 1100px;
+    }
+
+    .section__proyectos-proy_contImg {
+        grid-area: img;
+    }
+
+    .section__proyectos-proy_info {
+        grid-area: info;
+        margin-top: -10px;
+    }
+
+    .cont_buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section__proyectos-proy_button {
+        width: 103px;
+        height: 41px;
+    }
+
+    .btn_publicacion {
+        background-color: #0F172A;
+        color: white;
+        width: 145px;
+        height: 41px;
+        margin-bottom: 5px;
+        display: flex;
+    }
+
+    .btn_publicacion img {
+        display: block;
+    }
+
+    .cont_section-proy_small {
+        display: grid;
+        grid-template-areas:
+            "whater grafo"
+            "remeras remeras";
+        gap: 5px;
+        margin-bottom: 0px;
+    }
+
+    .whater {
+        grid-area: whater;
+    }
+
+    .grafo {
+        grid-area: grafo;
+    }
+
+    .remeras {
+        grid-area: remeras;
+    }
+
+    /* Tecnologias */
+    .section__tecnologias {
+        align-self: flex-start;
+    }
+
+    .section__tecnologias-contTeconologias {
+        width: 1050px;
+        flex-flow: row nowrap;
+    }
+
+    .section__tecnologias-item:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Contacto */
+
+    .section__contacto {
+        align-self: flex-start;
+        width: 900px;
+    }
+
+    /* Email */
+    .section__email {
+        align-self: flex-start;
+        width: 900px;
+    }
+
+    .section__email-cont {
+        width: 1280px;
+        justify-content: center;
+    }
+
+    .section__email-cont_email {
+        width: 638px;
+        height: 25px;
+        display: flex;
+    }
+
+    .email {
+        left: 25%;
+    }
 }
