@@ -8,54 +8,13 @@ function switchMode() {
     document.body.classList.toggle("dark");
     btn_switch.classList.toggle("active");
 
-    let div_header = document.querySelector(".header__info");
-    div_header.querySelector("h1").classList.toggle("dark");
-    document.querySelector(".header__container-iconGreen").classList.toggle("dark");
-    document.querySelectorAll("h2").forEach((element) => {
-        element.classList.toggle("dark");
-        let img_perfil = document.querySelector(".section__perfil-img").querySelector("img");
-        let img_star = document.querySelector(".section__proyectos-titulo_img").querySelector("img");
-        let img_tecnologia = document.querySelector(".section__tecnologias-titulo").querySelector("img");
-        let img_arroba = document.querySelector(".section__contacto-titulo").querySelector("img");
-        let img_arrow = document.querySelectorAll(".arrow_up");
-        img_arrow.forEach((arrow) => {
-            let img = arrow.querySelector("img");
-            if (element.classList.contains("dark")) {
-                img.src = "../img/icons/arrow-dark.png";
-            }
-            else {
-                img.src = "../img/icons/icons8-arrow-up-right-24.png";
-            }
-        });
+    switch_titles();
+    switch_imgs();
+    switch_svgs();
 
-        if (element.classList.contains("dark")) {
-            img_perfil.src = "../img/icons/user-dark.png";
-            img_star.src = "../img/icons/star-dark.png";
-            img_tecnologia.src = "../img/icons/pc-dark.png";
-            img_arroba.src = "../img/icons/arroba-dark.png";
-        } else {
-            img_perfil.src = "../img/icons/user.png";
-            img_star.src = "../img/icons/icons8-estrella-64.png";
-            img_tecnologia.src = "../img/icons/icons8-monitor-50.png";
-            img_arroba.src = "../img/icons/icons8-arroba-24.png";
-        }
-    });
-    document.querySelectorAll("p").forEach((element) => {
-        element.classList.toggle("dark");
-    });
-    document.querySelectorAll("button").forEach((boton) => {
-        boton.classList.toggle("dark");
-        document.querySelectorAll(".btn_publicacion").forEach((element) => {
-            if (boton.classList.contains("dark")) {
-                element.querySelector("img").src = "../img/icons/enlazar-dark.png";
-            } else {
-                element.querySelector("img").src = "../img/icons/icons8-enlazar-24.png";
-            }
-        });
-    });
-    document.querySelectorAll("h3").forEach((element) => {
-        element.classList.toggle("dark");
-    });
+    document.querySelector(".header__container-iconGreen").classList.toggle("dark");
+
+
     document.querySelectorAll(".section__proyectos-proy_small-item").forEach((element) => {
         element.classList.toggle("dark");
     });
@@ -67,7 +26,75 @@ function switchMode() {
     });
     document.querySelector(".section__email-cont_email").classList.toggle("dark");
 
+    document.querySelector(".tooltip-box").classList.toggle("dark");
+    document.querySelector(".tooltip-box_send").classList.toggle("dark");
+    document.querySelector(".tooltip-box_copiar").classList.toggle("dark");
+    // Guardamos el modo en localstorage.
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("dark-mode", "true");
+    } else {
+        localStorage.setItem("dark-mode", "false");
+    }
 
+}
+
+
+function switch_titles() {
+    let div_header = document.querySelector(".header__info");
+    div_header.querySelector("h1").classList.toggle("dark");
+    document.querySelectorAll("h2").forEach((element) => {
+        element.classList.toggle("dark");
+    });
+    document.querySelectorAll("p").forEach((element) => {
+        element.classList.toggle("dark");
+    });
+    document.querySelectorAll("h3").forEach((element) => {
+        element.classList.toggle("dark");
+    });
+}
+
+function switch_imgs() {
+    let img_perfil = document.querySelector(".section__perfil-img").querySelector("img");
+    let img_star = document.querySelector(".section__proyectos-titulo_img").querySelector("img");
+    let img_tecnologia = document.querySelector(".section__tecnologias-titulo").querySelector("img");
+    let img_arroba = document.querySelector(".section__contacto-titulo").querySelector("img");
+    let img_arrow = document.querySelectorAll(".arrow_up");
+    img_arrow.forEach((arrow) => {
+        let img = arrow.querySelector("img");
+        if (document.body.classList.contains("dark")) {
+            img.src = "../img/icons/arrow-dark.png";
+        }
+        else {
+            img.src = "../img/icons/icons8-arrow-up-right-24.png";
+        }
+    });
+
+    if (document.body.classList.contains("dark")) {
+        img_perfil.src = "../img/icons/user-dark.png";
+        img_star.src = "../img/icons/star-dark.png";
+        img_tecnologia.src = "../img/icons/pc-dark.png";
+        img_arroba.src = "../img/icons/arroba-dark.png";
+    } else {
+        img_perfil.src = "../img/icons/user.png";
+        img_star.src = "../img/icons/icons8-estrella-64.png";
+        img_tecnologia.src = "../img/icons/icons8-monitor-50.png";
+        img_arroba.src = "../img/icons/icons8-arroba-24.png";
+    }
+
+
+    document.querySelectorAll("button").forEach((boton) => {
+        boton.classList.toggle("dark");
+        document.querySelectorAll(".btn_publicacion").forEach((element) => {
+            if (boton.classList.contains("dark")) {
+                element.querySelector("img").src = "../img/icons/enlazar-dark.png";
+            } else {
+                element.querySelector("img").src = "../img/icons/icons8-enlazar-24.png";
+            }
+        });
+    });
+}
+
+function switch_svgs() {
     var btnSwitch = document.getElementById("btn__switch");
     var nav_switch = document.getElementById("nav_switch");
 
@@ -85,7 +112,6 @@ function switchMode() {
 
         svgBtnSwitch.appendChild(path);
 
-        // Reemplaza el elemento antiguo con el nuevo
         btnSwitch.replaceWith(svgBtnSwitch);
 
 
@@ -101,7 +127,6 @@ function switchMode() {
 
         svg_nav_switch.appendChild(pathnav_switch);
 
-        // Reemplaza el elemento antiguo con el nuevo
         nav_switch.replaceWith(svg_nav_switch);
 
     } else {
@@ -118,7 +143,6 @@ function switchMode() {
 
         svgBtnSwitch.appendChild(path);
 
-        // Reemplaza el elemento antiguo con el nuevo
         btnSwitch.replaceWith(svgBtnSwitch);
 
 
@@ -135,24 +159,6 @@ function switchMode() {
 
         svg_nav_switch.appendChild(pathnav_switch);
 
-        // Reemplaza el elemento antiguo con el nuevo
         nav_switch.replaceWith(svg_nav_switch);
     }
-
-    document.querySelector(".tooltip-box").classList.toggle("dark");
-    document.querySelector(".tooltip-box_send").classList.toggle("dark");
-    document.querySelector(".tooltip-box_copiar").classList.toggle("dark");
-    // Guardamos el modo en localstorage.
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("dark-mode", "true");
-    } else {
-        localStorage.setItem("dark-mode", "false");
-    }
-
 }
-
-
-function switch_titles() {
-
-}
-
