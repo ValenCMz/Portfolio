@@ -615,7 +615,7 @@ a {
     width: 300px;
     height: 25px;
     border-radius: 4px;
-    background: #F2F2F2;
+    background: #E0E7FF;
     position: relative;
 }
 
@@ -894,7 +894,7 @@ a {
     }
 
     .email {
-        left: 25%;
+        left: 30%;
     }
 
     .section__email-cont_email,
